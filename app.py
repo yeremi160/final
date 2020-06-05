@@ -33,7 +33,8 @@ txtaño=Entry(root,textvariable=entrada5,width=30).place(x=135,y=160)
 btnFuncion1 = Button(root, text= "FUNCION 1",font=("Agency FB",10),width=10).place(x=74,y=180)
 btnFuncion1 = Button(root, text= "FUNCION 2",font=("Agency FB",10),width=10).place(x=124,y=180)
 btnFuncion1 = Button(root, text= "FUNCION 3",font=("Agency FB",10),width=10).place(x=174,y=180)
-
+btnFuncion1 = Button(root, text= "FUNCION 4",font=("Agency FB",10),width=10).place(x=224,y=180)
+btnFuncion1 = Button(root, text= "FUNCION 5",font=("Agency FB",10),width=10).place(x=274,y=180)
 
 
 
