@@ -13,6 +13,21 @@ lblnombre=Label(text="Nombre",font=("Agency FB",14)).place(x=80,y=30)
 entrada1=StringVar()
 txtnombre=Entry(root,textvariable=entrada1,width=30).place(x=135,y=40)
 
+lblapellido=Label(text="Apellido",font=("Agency FB",14)).place(x=80,y=60)
+entrada2=StringVar()
+txtape=Entry(root,textvariable=entrada2,width=30).place(x=135,y=70)
+
+lbldia=Label(text="Dia",font=("Agency FB",14)).place(x=80,y=90)
+entrada3=StringVar()
+txtdia=Entry(root,textvariable=entrada3,width=30).place(x=135,y=100)
+
+lblmes=Label(text="Mes",font=("Agency FB",14)).place(x=80,y=120)
+entrada4=StringVar()
+txtmes=Entry(root,textvariable=entrada4,width=30).place(x=135,y=130)
+
+lblaño=Label(text="Año",font=("Agency FB",14)).place(x=80,y=150)
+entrada5=StringVar()
+txtaño=Entry(root,textvariable=entrada5,width=30).place(x=135,y=160)
 
 
 
