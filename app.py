@@ -1,4 +1,10 @@
 from tkinter import *
+
+#funcion
+def binario():
+    lblbinario=Label(root,text="hola"+ entrada1.get(),font=("Agency FB",14)).place(x=80,y=210)
+
+
 root = Tk()
 
 ancho = 460
@@ -6,8 +12,10 @@ alto = 250
 
 root.geometry(str(ancho)+"x"+str(alto))
 root.title("FINAL")
+
 #titulo
 saludo = Label(text="Bienvenido",font=("Agency FB",14)).place(x=190,y=5)
+
 #label
 lblnombre=Label(text="Nombre",font=("Agency FB",14)).place(x=80,y=30)
 entrada1=StringVar()
@@ -30,10 +38,14 @@ entrada5=StringVar()
 txtaño=Entry(root,textvariable=entrada5,width=30).place(x=135,y=160)
 
 #botones
-btnFuncion1 = Button(root, text= "FUNCION 1",font=("Agency FB",10),width=10).place(x=74,y=180)
+btnFuncion1 = Button(root, text= "FUNCION 1",command=binario,font=("Agency FB",10),width=10).place(x=74,y=180)
+
 btnFuncion1 = Button(root, text= "FUNCION 2",font=("Agency FB",10),width=10).place(x=124,y=180)
+
 btnFuncion1 = Button(root, text= "FUNCION 3",font=("Agency FB",10),width=10).place(x=174,y=180)
+
 btnFuncion1 = Button(root, text= "FUNCION 4",font=("Agency FB",10),width=10).place(x=224,y=180)
+
 btnFuncion1 = Button(root, text= "FUNCION 5",font=("Agency FB",10),width=10).place(x=274,y=180)
 
 
