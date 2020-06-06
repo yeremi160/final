@@ -1,64 +1,97 @@
 from tkinter import *
+from datetime import date
+from datetime import datetime
 
-#funcion
-def binario():
-    lblbinario=Label(root,text="hola"+ entrada1.get(),font=("Agency FB",14)).place(x=80,y=210)
-
-
-root = Tk()
-
-ancho = 460
-alto = 250
-
-root.geometry(str(ancho)+"x"+str(alto))
-root.title("FINAL")
-
-#titulo
-saludo = Label(text="Bienvenido",font=("Agency FB",14)).place(x=190,y=5)
-def dias():
-    lbldias=Label(root,text="hola"+ entrada2.get(),font=("Agency FB",14)).place(x=80,y=210)
-def par():
-    lblpar=Label(root,text="hola"+ entrada3.get(),font=("Agency FB",14)).place(x=80,y=210)
-def vocales():
-    lblvocales=Label(root,text="hola"+ entrada4.get(),font=("Agency FB",14)).place(x=80,y=210)
-def name():
-    lblname=Label(root,text="hola"+ entrada5.get(),font=("Agency FB",14)).place(x=80,y=210)
-
-#label
-lblnombre=Label(text="Nombre",font=("Agency FB",14)).place(x=80,y=30)
-entrada1=StringVar()
-txtnombre=Entry(root,textvariable=entrada1,width=30).place(x=135,y=40)
-
-lblapellido=Label(text="Apellido",font=("Agency FB",14)).place(x=80,y=60)
-entrada2=StringVar()
-txtape=Entry(root,textvariable=entrada2,width=30).place(x=135,y=70)
-
-lbldia=Label(text="Dia",font=("Agency FB",14)).place(x=80,y=90)
-entrada3=StringVar()
-txtdia=Entry(root,textvariable=entrada3,width=30).place(x=135,y=100)
-
-lblmes=Label(text="Mes",font=("Agency FB",14)).place(x=80,y=120)
-entrada4=StringVar()
-txtmes=Entry(root,textvariable=entrada4,width=30).place(x=135,y=130)
-
-lblaño=Label(text="Año",font=("Agency FB",14)).place(x=80,y=150)
-entrada5=StringVar()
-txtaño=Entry(root,textvariable=entrada5,width=30).place(x=135,y=160)
-
-#botones
-btnFuncion1 = Button(root, text= "FUNCION 1",command=binario,font=("Agency FB",10),width=10).place(x=74,y=180)
-
-btnFuncion1 = Button(root, text= "FUNCION 2",command=dias,font=("Agency FB",10),width=10).place(x=124,y=180)
-
-btnFuncion1 = Button(root, text= "FUNCION 3",command=par,font=("Agency FB",10),width=10).place(x=174,y=180)
-
-btnFuncion1 = Button(root, text= "FUNCION 4",command=vocales,font=("Agency FB",10),width=10).place(x=224,y=180)
-
-btnFuncion1 = Button(root, text= "FUNCION 5",command=name,font=("Agency FB",10),width=10).place(x=274,y=180)
+raiz = Tk()
+raiz.geometry("400x400")
+raiz.title("Examen final")
+code= Frame()
+code.pack()
+bienvenido = Label(code, text="BIENVENIDO")
+bienvenido.grid(row=0, column=1)
+bienvenido.config(font=('Arial black', 14))
 
 
+name = StringVar()
+ape = StringVar()
+dia = IntVar()
+mes = IntVar()
+ano = IntVar()
 
 
+def vida():
+    fechaString = f"{ano.get()}-{mes.get()}-{dia.get()}"
+    date_object = datetime.strptime(fechaString, '%Y-%m-%d')
+
+    today= datetime.today()
+    xx = today
+    xy = date_object
+    result1 = abs(xx-xy).days 
+
+    final = f"Naciste en {date_object} has vivido:  {result1} dias"
+
+    lblResp.configure(text = final)
+
+    
 
 
-root.mainloop()
+#--Conteo de Letras de Nombre 
+#--Conteo de Vocales y vocalesConsonantes
+#--Nombre al alReves
+
+
+#--Nombre
+lblname= Label(code, text="Nombre:",font=("Arial black",10))
+lblname.grid(row=1, column=0)
+lblname.config(padx=10, pady=10)
+txtNom=Entry(code, textvariable =code)
+txtNom.grid(row=1, column=1)
+#--Apellido
+lblape=Label(code, text="Apellido:",font=("Arial black",10))
+lblape.grid(row=2, column=0)
+lblape.config(padx=10, pady=10)
+txtApellido=Entry(code, textvariable =ape)
+txtApellido.grid(row=2, column=1)
+#--Día
+lbldia=Label(code, text="Día: ",font=("Arial black",10))
+lbldia.grid(row=3, column=0)
+lbldia.config(padx=10, pady=10)
+txtDia=Entry(code, textvariable =dia)
+txtDia.grid(row=3, column=1)
+#--Mes
+lblmes=Label(code, text="Mes: ",font=("Arial black",10))
+lblmes.grid(row=4, column=0)
+lblmes.config(padx=10, pady=10)
+txtMes=Entry(code, textvariable =mes)
+txtMes.grid(row=4, column=1)
+#--Año
+lblano=Label(code, text="Año: ",font=("Arial black",10))
+lblano.grid(row=5, column=0)
+lblano.config(padx=10, pady=10)
+txtanio=Entry(code, textvariable =ano)
+txtanio.grid(row=5, column=1)
+#--Botones
+btnFuncion1 = Button(code, text="Función 1",font=("Agency FB",12))
+btnFuncion1.grid(row=6, column=0)
+btnFuncion1.config(padx=3, pady=3)
+btnFuncion2 = Button(code, text = "Función 2", command=vida,font=("Agency FB",12))
+btnFuncion2.grid(row=6, column=1)
+btnFuncion2.config(padx=3, pady=3)
+btnFuncion3 = Button(code, text = "Función 3",font=("Agency FB",12))
+btnFuncion3.grid(row=6, column=2)
+btnFuncion3.config(padx=3, pady=3)
+btnFuncion4 = Button(code, text = "Función 4",font=("Agency FB",12))
+btnFuncion4.grid(row=6, column=3)
+btnFuncion4.config(padx=3, pady=3)
+btnFuncion5 = Button(code, text = "Función 5",font=("Agency FB",12))
+btnFuncion5.grid(row=6, column=4)
+btnFuncion5.config(padx=3, pady=3)
+#--Respuesta
+lblResp=Label(code, text="")
+lblResp.grid(row=15, column=6)
+lblResp.config(padx=5, pady=5)
+lblR=Label(code)
+lblR.grid(row=18, column=6)
+lblR.config(padx=5, pady=5)
+
+raiz.mainloop()
