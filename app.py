@@ -19,6 +19,8 @@ mes = IntVar()
 ano = IntVar()
 
 
+        
+    
 
 
 
@@ -82,10 +84,10 @@ btnFuncion5 = Button(code, text = "Función 5",font=("Agency FB",12))
 btnFuncion5.grid(row=6, column=4)
 btnFuncion5.config(padx=3, pady=3)
 lblResp=Label(code, text="")
-lblResp.grid(row=15, column=6)
+lblResp.grid(row=15, column=0)
 lblResp.config(padx=5, pady=5)
 lblR=Label(code)
-lblR.grid(row=18, column=6)
+lblR.grid(row=18, column=0)
 lblR.config(padx=5, pady=5)
 
 raiz.mainloop()
