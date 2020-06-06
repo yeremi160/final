@@ -19,6 +19,13 @@ mes = IntVar()
 ano = IntVar()
 
 
+
+
+
+
+
+
+
 def vida():
     fechaString = f"{ano.get()}-{mes.get()}-{dia.get()}"
     date_object = datetime.strptime(fechaString, '%Y-%m-%d')
@@ -34,43 +41,31 @@ def vida():
 
     
 
-
-#--Conteo de Letras de Nombre 
-#--Conteo de Vocales y vocalesConsonantes
-#--Nombre al alReves
-
-
-#--Nombre
 lblname= Label(code, text="Nombre:",font=("Arial black",10))
 lblname.grid(row=1, column=0)
 lblname.config(padx=10, pady=10)
 txtNom=Entry(code, textvariable =code)
 txtNom.grid(row=1, column=1)
-#--Apellido
 lblape=Label(code, text="Apellido:",font=("Arial black",10))
 lblape.grid(row=2, column=0)
 lblape.config(padx=10, pady=10)
 txtApellido=Entry(code, textvariable =ape)
 txtApellido.grid(row=2, column=1)
-#--Día
 lbldia=Label(code, text="Día: ",font=("Arial black",10))
 lbldia.grid(row=3, column=0)
 lbldia.config(padx=10, pady=10)
 txtDia=Entry(code, textvariable =dia)
 txtDia.grid(row=3, column=1)
-#--Mes
 lblmes=Label(code, text="Mes: ",font=("Arial black",10))
 lblmes.grid(row=4, column=0)
 lblmes.config(padx=10, pady=10)
 txtMes=Entry(code, textvariable =mes)
 txtMes.grid(row=4, column=1)
-#--Año
 lblano=Label(code, text="Año: ",font=("Arial black",10))
 lblano.grid(row=5, column=0)
 lblano.config(padx=10, pady=10)
 txtanio=Entry(code, textvariable =ano)
 txtanio.grid(row=5, column=1)
-#--Botones
 btnFuncion1 = Button(code, text="Función 1",font=("Agency FB",12))
 btnFuncion1.grid(row=6, column=0)
 btnFuncion1.config(padx=3, pady=3)
@@ -86,7 +81,6 @@ btnFuncion4.config(padx=3, pady=3)
 btnFuncion5 = Button(code, text = "Función 5",font=("Agency FB",12))
 btnFuncion5.grid(row=6, column=4)
 btnFuncion5.config(padx=3, pady=3)
-#--Respuesta
 lblResp=Label(code, text="")
 lblResp.grid(row=15, column=6)
 lblResp.config(padx=5, pady=5)
